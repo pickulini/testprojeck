@@ -1,0 +1,59 @@
+:root {
+  --bg: #ffffff;       /* фон страницы */
+  --surface: #f4f4f5;  /* фон экрана калькулятора, кнопок, карточек */
+  --border: #e4e4e7;   /* рамки */
+  --text: #18181b;     /* основной текст */
+  --accent: #900020;   /* акцент: активная ссылка, "=", операторы */
+
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light dark;  /* браузер сам подстроит скроллбары и поля ввода под тему */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f0405;
+    --surface: #27272a;
+    --border: #3f3f46;
+    --text: #f4f4f5;
+    --accent: #900020;  /* бордовый посветлее, чтобы читался на тёмном фоне */
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Контейнер, в который React рендерит всё приложение */
+#root {
+  max-width: 960px;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+nav a {
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* NavLink сам добавляет класс .active ссылке текущей страницы */
+nav a.active {
+  background: var(--accent);
+  color: #fff;
+}
