@@ -1,0 +1,21 @@
+/* ===== Меню ===== */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar__link {
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* NavLink сам добавляет класс .active ссылке текущей страницы */
+.navbar__link.active {
+  background: var(--accent);
+  color: #fff;
+}

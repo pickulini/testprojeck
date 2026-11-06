@@ -1,0 +1,99 @@
+/* ===== Планировщик ===== */
+
+/* Свой фон, пока открыт планировщик (атрибут ставит useEffect в Planner.tsx).
+   Фон светлый в любой теме, поэтому вместе с ним задаём тёмный текст и светлые рамки. */
+:root[data-page="planner"] {
+  --bg: #e8f2ff;
+  --surface: #ffffff;
+  --border: #c9d8ee;
+  --accent: #2f6fde;
+  --text: #18181b;
+  color-scheme: light;
+}
+
+.desk {
+  width: 480px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.desk__form {
+  display: flex;
+  gap: 8px;
+}
+
+.desk__input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.desk__input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.desk__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.desk__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.desk__title {
+  flex: 1;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.desk__empty {
+  margin: 0;
+  opacity: 0.6;
+  text-align: center;
+}
+
+.button {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--accent);
+}
+
+.button__add {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.button__delete {
+  padding: 4px 10px;
+}
+
+.button__clear {
+  align-self: center;
+}

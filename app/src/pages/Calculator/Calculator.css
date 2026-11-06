@@ -1,8 +1,7 @@
 /* ===== Калькулятор ===== */
-.Calculator {
+.calculator {
   width: 320px;
   max-width: 100%;
-  margin: 32px auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -17,8 +16,8 @@
   font-family: ui-monospace, monospace;
   font-size: 28px;
   text-align: right;
-  white-space: nowrap;   /* не переносить длинное выражение на новую строку */
-  overflow-x: auto;      /* а прокручивать его по горизонтали */
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .keys {
@@ -34,21 +33,32 @@
   background: var(--surface);
   color: var(--text);
   font-size: 20px;
+  cursor: pointer;
 }
 
 .key:hover {
   border-color: var(--accent);
 }
 
-.key.operator {
+.key--operator {
   color: var(--accent);
   font-weight: 600;
 }
 
-.key.equals {
+.key--equals {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
+}
+
+.key--clear,
+.key--erase {
+  font-weight: 600;
+}
+
+/* Кнопка на две колонки: C и 0 */
+.key--wide {
+  grid-column: span 2;
 }
 
 /* Узкие экраны (телефон): кнопки повыше, шрифт на экране поменьше */
